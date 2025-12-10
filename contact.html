@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ติดต่อ DataAI Pro" />
+    <title>ติดต่อเรา - DataAI Pro</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <img src="images/logo.png" alt="DataAI Pro Logo" width="150" />
+      <h1>DataAI Pro</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="about.html">เกี่ยวกับ</a></li>
+        <li><a href="services.html">บริการ</a></li>
+        <li><a href="contact.html">ติดต่อ</a></li>
+      </ul>
+    </nav>
+
+    <h2>ติดต่อเรา</h2>
+
+    <!-- 4.1 Contact Form -->
+    <section>
+      <h3>ส่งข้อความถึงเรา</h3>
+      <form action="#" method="post">
+        <div>
+          <label for="name">ชื่อ-นามสกุล:</label><br />
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div>
+          <label for="email">อีเมล:</label><br />
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div>
+          <label for="phone">เบอร์โทรศัพท์:</label><br />
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" />
+        </div>
+
+        <div>
+          <label for="company">บริษัท:</label><br />
+          <input type="text" id="company" name="company" />
+        </div>
+
+        <div>
+          <label for="service">บริการที่สนใจ:</label><br />
+          <select id="service" name="service">
+            <option value="">-- เลือกบริการ --</option>
+            <option value="thai-language">ข้อมูลภาษาไทย</option>
+            <option value="image-video">ข้อมูลภาพและวิดีโอ</option>
+            <option value="audio">ข้อมูลเสียง</option>
+            <option value="custom">Custom Dataset</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message">ข้อความ:</label><br />
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            cols="50"
+            required
+          ></textarea>
+        </div>
+
+        <div>
+          <input type="checkbox" id="consent" name="consent" required />
+          <label for="consent"
+            >ฉันยินยอมให้ DataAI Pro ติดต่อกลับเพื่อให้ข้อมูลเพิ่มเติม</label
+          >
+        </div>
+
+        <div>
+          <button type="submit">ส่งข้อความ</button>
+          <button type="reset">ล้างข้อมูล</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 4.2 ที่อยู่ของบริษัท -->
+    <section>
+      <h3>ที่อยู่บริษัท</h3>
+      <address>
+        <strong>DataAI Pro Co., Ltd.</strong><br />
+        123/45 ถนนสุขุมวิท<br />
+        แขวงคลองเตย เขตคลองเตย<br />
+        กรุงเทพมหานคร 10110<br />
+        <br />
+        <strong>โทรศัพท์:</strong> <a href="tel:+6621234567">02-123-4567</a
+        ><br />
+        <strong>อีเมล:</strong>
+        <a href="mailto:info@dataai.com">info@dataai.com</a><br />
+        <strong>Line ID:</strong> @dataai<br />
+      </address>
+    </section>
+
+    <!-- 4.3 แผนที่ (embed Google Maps) -->
+    <section>
+      <h3>แผนที่</h3>
+      <!-- ตัวอย่าง Google Maps embed - ให้เปลี่ยน src เป็นที่อยู่จริง -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.9738788258877!2d100.55591931531436!3d13.731481101315397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ee109d08a8d%3A0x43dd257996e3bcb6!2sEmQuartier!5e0!3m2!1sth!2sth!4v1234567890123!5m2!1sth!2sth"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="แผนที่ตั้งบริษัท DataAI Pro"
+      >
+      </iframe>
+      <p>
+        <small
+          >หมายเหตุ: แผนที่นี้เป็นตัวอย่าง
+          กรุณาเปลี่ยนเป็นตำแหน่งจริงของบริษัท</small
+        >
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 DataAI Pro. All rights reserved.</p>
+      <p>อีเมล: info@dataai.com | โทร: 02-xxx-xxxx</p>
+    </footer>
+  </body>
+</html>
