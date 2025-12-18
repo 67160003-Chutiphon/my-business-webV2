@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units - หน่วยวัด</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* CSS Units Demo Styles */
+        .units-section { margin: 40px 0; }
+        
+        .px-demo {
+            width: 300px;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #e8f4f8;
+            border: 2px solid #264de4;
+            border-radius: 5px;
+        }
+        
+        .percentage-container {
+            width: 400px;
+            background-color: #f0f0f0;
+            border: 2px solid #666;
+            margin: 20px 0;
+            padding: 10px;
+        }
+        
+        .percentage-demo { width: 100%; padding: 15px; background-color: #d5f4e6; border: 2px solid #27ae60; margin: 5px 0; }
+        .percentage-demo-50 { width: 50%; padding: 15px; background-color: #fef5e7; border: 2px solid #f39c12; margin: 5px 0; }
+        .percentage-demo-75 { width: 75%; padding: 15px; background-color: #fadbd8; border: 2px solid #e74c3c; margin: 5px 0; }
+        
+        .em-demo {
+            font-size: 16px;
+            background-color: #d1ecf1;
+            border: 2px solid #0c5460;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .em-demo-small { font-size: 0.8em; color: #666; }
+        .em-demo-large { font-size: 1.5em; color: #264de4; font-weight: bold; }
+        
+        .rem-demo {
+            background-color: #ecf0f1;
+            border: 2px solid #95a5a6;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        .rem-demo-h { font-size: 2rem; color: #264de4; margin-bottom: 0.5rem; }
+        .rem-demo-p { font-size: 1rem; line-height: 1.5rem; }
+        
+        .viewport-demo {
+            height: 30vh;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .units-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .units-table th, .units-table td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+        .units-table th { background-color: #264de4; color: white; }
+        .units-table tr:nth-child(even) { background-color: #f9f9f9; }
+        
+        .use-case {
+            background-color: #d5f4e6;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .use-case strong { color: #27ae60; }
+        
+        .code-example {
+            background-color: #f4f4f4;
+            border-left: 4px solid #264de4;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Units - หน่วยวัด</h1>
+        <p>เรียนรู้หน่วยวัดต่างๆ ที่ใช้ใน CSS</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="units.html">CSS Units</a></li>
+            <li><a href="box-model.html">Box Model</a></li>
+            <li><a href="positioning.html">Positioning</a></li>
+            <li><a href="display-layout.html">Display & Layout</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <!-- Absolute Units -->
+        <section class="units-section">
+            <h2>1. Absolute Units (หน่วยคงที่)</h2>
+            <h3>Pixel (px)</h3>
+            <p>หน่วยที่นิยมใช้มากที่สุด - ขนาดคงที่ไม่เปลี่ยนแปลง</p>
+            
+            <div class="px-demo">
+                <h4>width: 300px, padding: 20px</h4>
+                <p>Element นี้มีความกว้างคงที่ 300px</p>
+            </div>
+            
+            <div class="code-example">
+                <code>.box { width: 300px; padding: 20px; margin: 10px; }</code>
+            </div>
+            
+            <div class="use-case">
+                <strong>✅ ใช้ px เมื่อ:</strong> borders, shadows, fixed layouts, icons
+            </div>
+        </section>
+        
+        <!-- Relative Units -->
+        <section class="units-section">
+            <h2>2. Relative Units (หน่วยสัมพัทธ์)</h2>
+            
+            <!-- Percentage -->
+            <h3>Percentage (%)</h3>
+            <p>ขนาดสัมพัทธ์กับ parent element</p>
+            
+            <div class="percentage-container">
+                <p><strong>Parent: width: 400px</strong></p>
+                <div class="percentage-demo">width: 100% = 400px</div>
+                <div class="percentage-demo-50">width: 50% = 200px</div>
+                <div class="percentage-demo-75">width: 75% = 300px</div>
+            </div>
+            
+            <!-- Em -->
+            <h3>Em (em)</h3>
+            <p>1em = current font-size ของ parent</p>
+            
+            <div class="em-demo">
+                <p><strong>Parent: font-size: 16px</strong></p>
+                <p class="em-demo-small">0.8em = 12.8px</p>
+                <p>1em = 16px (normal)</p>
+                <p class="em-demo-large">1.5em = 24px</p>
+            </div>
+            
+            <!-- Rem -->
+            <h3>Rem (rem)</h3>
+            <p>1rem = root element font-size (html) - แนะนำใช้!</p>
+            
+            <div class="rem-demo">
+                <div class="rem-demo-h">font-size: 2rem = 32px</div>
+                <p class="rem-demo-p">font-size: 1rem = 16px</p>
+            </div>
+            
+            <div class="use-case">
+                <strong>✅ ใช้ rem เมื่อ:</strong> typography, consistent spacing ทั่วโปรเจค
+            </div>
+        </section>
+        
+        <!-- Viewport Units -->
+        <section class="units-section">
+            <h2>3. Viewport Units</h2>
+            <p>1vw = 1% ของ viewport width, 1vh = 1% ของ viewport height</p>
+            
+            <div class="viewport-demo">height: 30vh = 30% ของหน้าจอ</div>
+            
+            <div class="use-case">
+                <strong>✅ ใช้ vw/vh เมื่อ:</strong> full-screen sections, hero sections
+            </div>
+        </section>
+        
+        <!-- Comparison Table -->
+        <section class="units-section">
+            <h2>สรุป CSS Units</h2>
+            <table class="units-table">
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>อ้างอิงกับ</th>
+                        <th>Responsive</th>
+                        <th>ใช้เมื่อ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>px</strong></td><td>ไม่มี (fixed)</td><td>❌</td><td>Borders, shadows</td></tr>
+                    <tr><td><strong>%</strong></td><td>Parent element</td><td>✅</td><td>Responsive widths</td></tr>
+                    <tr><td><strong>em</strong></td><td>Parent font-size</td><td>✅</td><td>Component spacing</td></tr>
+                    <tr><td><strong>rem</strong></td><td>Root font-size</td><td>✅</td><td>Typography (แนะนำ)</td></tr>
+                    <tr><td><strong>vw/vh</strong></td><td>Viewport</td><td>✅</td><td>Full-screen sections</td></tr>
+                </tbody>
+            </table>
+            
+            <div class="use-case" style="background-color: #d1ecf1; border-left-color: #0c5460;">
+                <strong style="color: #0c5460;">💡 ทิป:</strong> ใช้ rem และ % เป็นหลัก เพราะช่วยให้เว็บไซต์ responsive ได้ดี
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 CSS Fundamentals Lab</p>
+    </footer>
+</body>
+</html>
