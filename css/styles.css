@@ -65,3 +65,23 @@ a:hover {
     color: #2c5282;
     text-decoration: underline;
 }
+
+/* ========================
+   LAYOUT & CONTAINERS
+   ======================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem;
+}
+
+.section {
+    padding: 3rem 0;
+    margin-bottom: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
