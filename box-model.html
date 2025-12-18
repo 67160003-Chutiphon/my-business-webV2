@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model & Colors & Text</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .box-section { margin: 40px 0; }
+        
+        .box-basic {
+            width: 300px;
+            padding: 20px;
+            border: 3px solid #264de4;
+            margin: 20px 0;
+            background-color: #e8f4f8;
+        }
+        
+        .box-rounded {
+            width: 300px;
+            padding: 20px;
+            border: 2px dashed #27ae60;
+            border-radius: 15px;
+            margin: 20px 0;
+            background-color: #d5f4e6;
+        }
+        
+        .box-padding-demo {
+            width: 280px;
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 40px;
+            border: 2px solid #e74c3c;
+            margin: 20px 0;
+            background-color: #fadbd8;
+        }
+        
+        .box-centered {
+            width: 400px;
+            padding: 20px;
+            margin: 20px auto;
+            border: 2px solid #f39c12;
+            background-color: #fef5e7;
+            text-align: center;
+        }
+        
+        .box-sizing-demo { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; }
+        .box-content-box {
+            width: 200px;
+            padding: 20px;
+            border: 5px solid #8e44ad;
+            box-sizing: content-box;
+            background-color: #f4ecf7;
+        }
+        .box-border-box {
+            width: 200px;
+            padding: 20px;
+            border: 5px solid #8e44ad;
+            box-sizing: border-box;
+            background-color: #f4ecf7;
+        }
+        
+        .box-shadow-demo {
+            width: 300px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .box-shadow-demo:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+        }
+        
+        .card-demo {
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .card-demo-header { background-color: #264de4; color: white; padding: 15px; }
+        .card-demo-body { padding: 20px; }
+        .card-demo-footer { background-color: #ecf0f1; padding: 15px; border-top: 1px solid #ddd; }
+        
+        /* Colors */
+        .text-primary { color: #264de4; }
+        .text-success { color: #27ae60; }
+        .text-warning { color: #f39c12; }
+        .text-danger { color: #e74c3c; }
+        
+        .bg-light { background-color: #ecf0f1; padding: 15px; border-radius: 4px; margin: 10px 0; }
+        .bg-info { background-color: #d1ecf1; border-left: 4px solid #0c5460; padding: 15px; margin: 10px 0; }
+        
+        .font-bold { font-weight: 700; }
+        .font-italic { font-style: italic; }
+        .text-uppercase { text-transform: uppercase; letter-spacing: 2px; }
+        .text-center { text-align: center; }
+        
+        .code-box {
+            background-color: #f4f4f4;
+            border-left: 4px solid #264de4;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Box Model & Colors & Text</h1>
+        <p>เรียนรู้ Box Model และการจัดรูปแบบสีและข้อความ</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="units.html">CSS Units</a></li>
+            <li><a href="box-model.html">Box Model</a></li>
+            <li><a href="positioning.html">Positioning</a></li>
+            <li><a href="display-layout.html">Display & Layout</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <!-- Box Model -->
+        <section class="box-section">
+            <h2>Box Model Components</h2>
+            <p><strong>Content → Padding → Border → Margin</strong></p>
+            
+            <h3>1. Basic Box</h3>
+            <div class="box-basic">
+                <h4>Content + Padding + Border + Margin</h4>
+                <p>นี่คือ box พื้นฐาน</p>
+            </div>
+            
+            <h3>2. Border Radius</h3>
+            <div class="box-rounded">
+                <h4>border-radius: 15px</h4>
+                <p>Box มีมุมโค้ง</p>
+            </div>
+            
+            <h3>3. Different Padding Sides</h3>
+            <div class="box-padding-demo">
+                <p>padding: top 10px, right 20px, bottom 30px, left 40px</p>
+            </div>
+            
+            <h3>4. Centered Box (margin: auto)</h3>
+            <div class="box-centered">
+                <h4>margin: 20px auto</h4>
+                <p>Box อยู่ตรงกลาง</p>
+            </div>
+            
+            <h3>5. Box Sizing: content-box vs border-box</h3>
+            <div class="box-sizing-demo">
+                <div class="box-content-box">
+                    <strong>content-box</strong><br>
+                    width = content only<br>
+                    Total = 200 + 40 + 10 = 250px
+                </div>
+                <div class="box-border-box">
+                    <strong>border-box</strong><br>
+                    width = รวมทั้งหมด<br>
+                    Total = 200px (แนะนำ)
+                </div>
+            </div>
+            
+            <h3>6. Box Shadow (Hover me!)</h3>
+            <div class="box-shadow-demo">
+                <h4>box-shadow + hover effect</h4>
+                <p>Hover เพื่อดู shadow เพิ่มขึ้น</p>
+            </div>
+            
+            <h3>7. Card Component</h3>
+            <div class="card-demo">
+                <div class="card-demo-header"><h4>Card Header</h4></div>
+                <div class="card-demo-body"><p>Card body content</p></div>
+                <div class="card-demo-footer"><small>Card Footer</small></div>
+            </div>
+        </section>
+        
+        <!-- Colors -->
+        <section class="box-section">
+            <h2>Colors & Text Styling</h2>
+            
+            <h3>Color Formats</h3>
+            <div class="code-box">
+                color: red; /* Named */<br>
+                color: #ff0000; /* HEX */<br>
+                color: rgb(255, 0, 0); /* RGB */<br>
+                color: rgba(255, 0, 0, 0.5); /* RGBA */
+            </div>
+            
+            <h3>Text Colors</h3>
+            <p class="text-primary">📘 Primary Color (Blue)</p>
+            <p class="text-success">✅ Success Color (Green)</p>
+            <p class="text-warning">⚠️ Warning Color (Orange)</p>
+            <p class="text-danger">❌ Danger Color (Red)</p>
+            
+            <h3>Background Colors</h3>
+            <div class="bg-light"><p>Light Background</p></div>
+            <div class="bg-info"><p>Info Background with left border</p></div>
+            
+            <h3>Font Styling</h3>
+            <p class="font-bold">This text is BOLD (font-weight: 700)</p>
+            <p class="font-italic">This text is ITALIC (font-style: italic)</p>
+            <p class="text-uppercase">uppercase text (text-transform: uppercase)</p>
+            <p class="text-center">Centered text (text-align: center)</p>
+            
+            <h3>Font Sizes</h3>
+            <p style="font-size: 12px;">12px - Small text</p>
+            <p style="font-size: 16px;">16px - Normal text</p>
+            <p style="font-size: 24px;">24px - Large text</p>
+            <p style="font-size: 32px;">32px - Very large text</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 CSS Fundamentals Lab</p>
+    </footer>
+</body>
+</html>
