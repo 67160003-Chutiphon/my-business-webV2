@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .pos-section { margin: 40px 0; }
+        
+        /* Static */
+        .static-demo {
+            position: static;
+            background-color: #e8f4f8;
+            border: 2px solid #264de4;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        /* Relative */
+        .relative-demo {
+            position: relative;
+            background-color: #d5f4e6;
+            border: 2px solid #27ae60;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .relative-moved {
+            position: relative;
+            top: 20px;
+            left: 30px;
+            background-color: #d5f4e6;
+            border: 2px solid #27ae60;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        /* Absolute */
+        .absolute-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background-color: #ecf0f1;
+            border: 2px solid #95a5a6;
+            margin: 20px 0;
+        }
+        .absolute-child {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #e74c3c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .top-left { top: 10px; left: 10px; }
+        .top-right { top: 10px; right: 10px; }
+        .bottom-left { bottom: 10px; left: 10px; }
+        .bottom-right { bottom: 10px; right: 10px; }
+        .centered { 
+            top: 50%; left: 50%; 
+            transform: translate(-50%, -50%); 
+            background-color: #f39c12;
+        }
+        
+        /* Fixed */
+        .fixed-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #264de4;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+        .fixed-btn:hover {
+            background-color: #1a3a8f;
+            transform: scale(1.1);
+        }
+        
+        /* Sticky */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px 4px 0 0;
+            z-index: 100;
+        }
+        .sticky-content {
+            background-color: #d6eaf8;
+            padding: 20px;
+            border-radius: 0 0 4px 4px;
+            min-height: 200px;
+        }
+        
+        /* Z-index */
+        .stacking-demo {
+            position: relative;
+            height: 180px;
+            margin: 20px 0;
+            background-color: #ecf0f1;
+            border: 2px solid #95a5a6;
+        }
+        .box-z { position: absolute; width: 120px; height: 80px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
+        .box-z1 { background-color: #e74c3c; top: 20px; left: 20px; z-index: 1; }
+        .box-z2 { background-color: #f39c12; top: 40px; left: 80px; z-index: 2; }
+        .box-z3 { background-color: #27ae60; top: 60px; left: 140px; z-index: 3; }
+        
+        /* Badge */
+        .badge-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: #d6eaf8;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 35px;
+            height: 35px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .pos-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .pos-table th, .pos-table td { padding: 12px; text-align: left; border: 1px solid #ddd; }
+        .pos-table th { background-color: #264de4; color: white; }
+        .pos-table tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Positioning</h1>
+        <p>เรียนรู้การจัดตำแหน่ง element ด้วย CSS</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="units.html">CSS Units</a></li>
+            <li><a href="box-model.html">Box Model</a></li>
+            <li><a href="positioning.html">Positioning</a></li>
+            <li><a href="display-layout.html">Display & Layout</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <!-- Static -->
+        <section class="pos-section">
+            <h2>1. Static Position (ค่าเริ่มต้น)</h2>
+            <p>element อยู่ในตำแหน่งปกติตาม document flow</p>
+            <div class="static-demo">
+                <p><strong>position: static</strong> - อยู่ในลำดับปกติของ HTML</p>
+            </div>
+        </section>
+        
+        <!-- Relative -->
+        <section class="pos-section">
+            <h2>2. Relative Position</h2>
+            <p>ย้ายตำแหน่งเทียบกับตำแหน่งเดิม แต่ยังคงใช้พื้นที่เดิม</p>
+            <div class="relative-demo">ไม่มีการเลื่อน</div>
+            <div class="relative-moved">
+                เลื่อน top: 20px, left: 30px ↘️
+            </div>
+        </section>
+        
+        <!-- Absolute -->
+        <section class="pos-section">
+            <h2>3. Absolute Position</h2>
+            <p>วางตำแหน่งเทียบกับ parent ที่มี position (relative/absolute/fixed)</p>
+            <div class="absolute-container">
+                <div class="absolute-child top-left">Top Left</div>
+                <div class="absolute-child top-right">Top Right</div>
+                <div class="absolute-child bottom-left">Bottom Left</div>
+                <div class="absolute-child bottom-right">Bottom Right</div>
+                <div class="absolute-child centered">Center</div>
+            </div>
+            
+            <h3>ตัวอย่าง: Badge</h3>
+            <div class="badge-container">
+                <span>Product</span>
+                <div class="badge">3</div>
+            </div>
+        </section>
+        
+        <!-- Fixed -->
+        <section class="pos-section">
+            <h2>4. Fixed Position</h2>
+            <p>ติดกับ viewport ไม่เลื่อนไปกับ scroll (ดูปุ่ม ➕ ด้านล่างขวา)</p>
+        </section>
+        
+        <!-- Sticky -->
+        <section class="pos-section">
+            <h2>5. Sticky Position</h2>
+            <p>รวม relative + fixed - ปกติ relative แต่ sticky เมื่อ scroll ถึง</p>
+            <div class="sticky-header">📌 Sticky Header - Scroll ลงมาดู!</div>
+            <div class="sticky-content">
+                <p>Sticky position ทำให้ header ติดด้านบนเมื่อ scroll</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            </div>
+        </section>
+        
+        <!-- Z-index -->
+        <section class="pos-section">
+            <h2>6. Z-Index (Stacking Order)</h2>
+            <p>ควบคุมลำดับการซ้อนทับ - ยิ่งสูงยิ่งอยู่บนสุด</p>
+            <div class="stacking-demo">
+                <div class="box-z box-z1">z-index: 1</div>
+                <div class="box-z box-z2">z-index: 2</div>
+                <div class="box-z box-z3">z-index: 3</div>
+            </div>
+        </section>
+        
+        <!-- Summary Table -->
+        <section class="pos-section">
+            <h2>สรุป Position Values</h2>
+            <table class="pos-table">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>อ้างอิงกับ</th>
+                        <th>ใช้เมื่อ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>static</strong></td><td>Document flow</td><td>ไม่ต้องย้ายตำแหน่ง</td></tr>
+                    <tr><td><strong>relative</strong></td><td>ตำแหน่งเดิม</td><td>ปรับแต่งเล็กน้อย, parent สำหรับ absolute</td></tr>
+                    <tr><td><strong>absolute</strong></td><td>Parent ที่มี position</td><td>Badge, tooltip, dropdown</td></tr>
+                    <tr><td><strong>fixed</strong></td><td>Viewport</td><td>Navbar, floating button</td></tr>
+                    <tr><td><strong>sticky</strong></td><td>Parent + Viewport</td><td>Table header, sticky nav</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <!-- Fixed Button -->
+    <div class="fixed-btn">+</div>
+    
+    <footer>
+        <p>&copy; 2024 CSS Fundamentals Lab</p>
+    </footer>
+</body>
+</html>
