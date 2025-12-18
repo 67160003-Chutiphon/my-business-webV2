@@ -208,3 +208,65 @@ article:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transform: translateY(-2px);
 }
+
+/* ========================
+   COMPONENTS - BUTTONS
+   ======================== */
+.btn,
+button {
+    display: inline-block;
+    background-color: #3182ce;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover,
+button:hover {
+    background-color: #2c5282;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active,
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button[type="reset"] {
+    background-color: #718096;
+}
+
+button[type="reset"]:hover {
+    background-color: #4a5568;
+}
+
+/* ========================
+   COMPONENTS - FOOTER
+   ======================== */
+#footer,
+footer {
+    background-color: #1a365d;
+    color: white;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer p {
+    color: #e2e8f0;
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #63b3ed;
+}
+
+footer a:hover {
+    color: white;
+}
