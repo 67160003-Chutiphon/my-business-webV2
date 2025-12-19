@@ -81,7 +81,7 @@ my-business-web/
 
 ```bash
 # Clone repository
-git clone [repo-url]
+git clone https://github.com/67160003-Chutiphon/my-business-webV2.git
 
 # เปิดในเบราว์เซอร์
 open index.html
